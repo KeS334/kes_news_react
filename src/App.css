@@ -1,33 +1,326 @@
-.App {
-  text-align: center;
-}
+* {
+  margin: 0;
+  padding: 0; }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
+a {
+  text-decoration: none; }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+body {
+  background-color: #FDB014;
+  display: grid; }
+
+img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -10;
+  opacity: 0.9;
+  width: 100%;
+  height: 100%; }
+
+.wrap {
+  width: 1000px;
+  margin: 0 auto; }
+
+.inactive {
+  display: none; }
+
+.tab_main, .mainPart .tab_main1, .tab_main2 {
+  background-color: #FDC350;
+  height: 500px;
+  box-sizing: border-box;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
+
+.trans {
+  background-color: transparent; }
+
+.act {
+  background-color: #FDC350;
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0px -3px 5px 0px rgba(0, 0, 0, 0.5); }
+
+.testGrid {
+  position: fixed;
+  right: 60px;
+  top: 40px;
+  font-size: 3em;
+  background-color: #FDC350;
+  border: 2px solid #CE5700;
+  border-radius: 20px; }
+.testGrid div:hover {
+  background-color: white;
+  border-radius: 20px; }
+.testGrid div p {
+  padding: 5px 10px; }
+
+.grid, .tab_head, .tab_main1 div, .calendar div, .recordsList div {
+  display: grid; }
+
+header {
+  grid-template-columns: 1fr 1fr 1fr; }
+
+.tab_main1 {
+  grid-template-areas: "list name" "list tag" "list description" "list settings" "list button";
+  grid-template-rows: 40px 20px 140px 160px 50px;
+  grid-template-columns: 1fr 2fr;
+  grid-row-gap: 10px;
+  grid-column-gap: 20px;
+  grid-column: 1/span 2; }
+.tab_main1 .list {
+  grid-row: list;
+  grid-column: list; }
+.tab_main1 .news_head {
+  grid-row: name;
+  grid-column: name; }
+.tab_main1 .news_tags {
+  grid-row: tag;
+  grid-column: tag; }
+.tab_main1 .news_settings {
+  grid-row: settings;
+  grid-column: settings;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5px; }
+.tab_main1 .button {
+  grid-row: button;
+  grid-column: button; }
+
+.tab_main2 {
+  grid-column: span 2; }
+
+.calendar {
+  grid-template-rows: 2fr 2fr 12fr 3fr; }
+
+.calTitleMonthLine {
+  grid-template-columns: 10% 80% 10%; }
+
+.calTitleWeekLine, .calLine {
+  grid-template-columns: repeat(7, 1fr); }
+.calTitleWeekLine P, .calLine P {
+  align-self: center; }
+
+.calLegRow {
+  grid-template-columns: repeat(4, 1fr); }
+
+.recordsList {
+  grid-template-rows: 1fr 8fr; }
+.recordsList .listHead {
+  grid-template-columns: 1fr 4fr; }
+
+.recHead {
+  grid-template-columns: 1fr 1fr; }
+.recHead .recButt {
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr; }
+
+.b1:hover:before {
+  background-color: white;
+  color: red; }
+
+header {
+  height: 60px;
+  background-color: #3C1900;
+  border-radius: 0 0 25px 25px;
   color: white;
-}
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 20px; }
+header div {
+  justify-content: center;
+  align-self: center; }
+header .logo p {
+  font: 32px Segoe Print;
+  margin-top: 0px; }
+header .number p {
+  font: bold 14px Calibri; }
+header .button {
+  width: 120px;
+  height: 36px;
+  background-color: #FFD686;
+  margin: 0 auto;
+  border-radius: 5px; }
+header .button p {
+  font: 20px Helvetica;
+  color: #3C1900;
+  align-self: center; }
 
-.App-link {
-  color: #61dafb;
-}
+.mainPart {
+  margin: 0 auto; }
+.mainPart .tab_head {
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  cursor: pointer;
+  z-index: 100; }
+.mainPart .tab_head p {
+  align-self: center;
+  font: 20px Helvetica;
+  color: #CE5700;
+  text-shadow: 1px 1px 1px black; }
+.mainPart .tab_main1 {
+  padding: 20px 40px;
+  border-radius: 0 30px 10px 10px; }
+.mainPart .tab_main1 .list {
+  background-color: #fcdda2;
+  /*@include borR(25px);*/
+  border-radius: 10px 0 0 10px;
+  border: 2px solid #fdb014;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  align-self: center;
+  margin: 0 auto;
+  margin-top: 0px;
+  overflow-y: scroll;
+  padding: 5px 0;
+  box-sizing: border-box; }
+.mainPart .tab_main1 .list p {
+  padding: 5px 15px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #CE5700;
+  /*font-family: Arial;*/ }
+.mainPart .tab_main1 input {
+  align-items: center;
+  align-self: stretch;
+  background-color: #fcdda2;
+  border-radius: 10px;
+  border: 2px solid #fdb014;
+  padding: 0 10px; }
+.mainPart .tab_main1 .news_head input {
+  font-size: 24px; }
+.mainPart .tab_main1 .news_tags input {
+  border-radius: 5px;
+  width: 40%; }
+.mainPart .tab_main1 .news_mainText textarea {
+  overflow-y: scroll;
+  align-self: stretch;
+  resize: none;
+  background-color: #fcdda2;
+  border-radius: 10px 0 0 10px;
+  border: 2px solid #fdb014;
+  padding: 5px;
+  font-size: 18px; }
+.mainPart .tab_main1 .news_settings {
+  background-color: #fcdda2;
+  border-radius: 10px;
+  border: 2px solid #fdb014;
+  padding: 10px 30px; }
+.mainPart .tab_main1 .news_settings p {
+  align-self: center; }
+.mainPart .tab_main1 .news_settings input {
+  text-align: center;
+  border-radius: 5px;
+  background-color: white; }
+.mainPart .tab_main1 .news_settings select {
+  padding: 0 90px;
+  border-radius: 5px;
+  border: 2px solid #fdb014; }
+.mainPart .tab_main1 .button {
+  background-color: #CE5700; }
+.mainPart .tab_main1 .button p {
+  align-self: center;
+  align-items: center;
+  text-align: center;
+  font: 20px Helvetica;
+  color: #fcdda2; }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+.tab_main2 {
+  border-radius: 30px 0 10px 10px;
+  padding: 40px 10%;
+  box-sizing: border-box; }
+
+.calendar {
+  border: 2px solid black;
+  width: 100%;
+  height: 85%;
+  padding: 20px 10%;
+  box-sizing: border-box; }
+.calendar p {
+  text-align: center;
+  font-family: Helvetica;
+  font-size: 20xp; }
+.calendar .calTitleMonthLine {
+  height: 50px;
+  margin: 0 2%;
+  background-color: #CE5700;
+  border-radius: 5px; }
+.calendar .calTitleMonthLine p {
+  font-size: 28px;
+  text-align: center;
+  font-family: serif;
+  color: white;
+  align-self: center; }
+.calendar .calDay {
+  background-color: white;
+  width: 80%;
+  align-items: center;
+  align-self: stretch;
+  text-align: center;
+  margin: 5px auto;
+  padding: 5px 0 2px;
+  border-radius: 10px;
+  cursor: pointer; }
+.calendar .few {
+  background-color: #fcdda2; }
+.calendar .med {
+  background-color: #fdb014; }
+.calendar .lot {
+  background-color: #CE5700; }
+.calendar .calLegRow {
+  background-color: white;
+  border: 2px solid #fdb014;
+  margin-top: 5px;
+  border-radius: 5px; }
+.calendar .calLegRow div {
+  align-self: center;
+  margin: 0 auto;
+  padding: 5px;
+  width: 60%;
+  border: 1px solid black;
+  border-radius: 5px; }
+
+.recordsList .listHead {
+  height: 60px;
+  margin-bottom: 10px; }
+.recordsList .listHead div {
+  align-self: center; }
+.recordsList .listHead div P {
+  font: 22px Helvetica;
+  margin: 0 auto; }
+.recordsList .listHead .listData {
+  margin: 0 0 0 auto; }
+.recordsList .listHead .listData p {
+  font-size: 30px;
+  font-weight: 500; }
+.recordsList .listHead .bBack {
+  color: white;
+  background-color: #CE5700;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer; }
+.recordsList .listMain {
+  border: 2px solid #fdb014;
+  overflow-y: scroll;
+  height: 320px;
+  background-color: #fcdda2;
+  padding: 10px; }
+.recordsList .record {
+  border-bottom: 2px solid #fdb014;
+  padding: 10px;
+  margin: 0 10px;
+  box-sizing: border-box; }
+.recordsList .recHead {
+  font-size: 24px;
+  font-family: Helvetica; }
+.recordsList .recHead .recButt {
+  width: 60px;
+  align-self: flex-end;
+  margin-left: auto;
+  margin-right: -5px; }
+.recordsList .recHead .recButt .recButtDel {
+  font-size: 34px;
+  margin-top: -3px; }
+
+/*# sourceMappingURL=style.css.map */
