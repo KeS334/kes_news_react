@@ -1,0 +1,98 @@
+$nLine_1: "list name" "list tag" "list description" "list settings" "list button";
+$nLine_2: "name name" "list tag" "list description" "list settings" "button button";
+$nLine_3: "name name name" "list tag tag"  "list settings description" "button button button";
+$rowsValue_1: 40px 20px 140px 160px 50px;
+$rowsValue_3: 40px 20px 300px 50px;
+$columnValue_1: 1fr 2fr;
+$columnValue_3: 1fr 1fr 1fr;
+.grid{
+    display:grid;
+}
+header{
+     grid-template-columns: 1fr 1fr 1fr;
+}
+
+.tab_head{
+        @extend .grid;
+}
+.tab_main1{
+    grid-template-areas: $nLine_1;   
+    grid-template-rows: $rowsValue_1;
+    grid-template-columns: $columnValue_1;
+    grid-row-gap: 10px;
+    grid-column-gap: 20px;
+    grid-column: 1/span 2;
+    div{
+        @extend .grid;
+    }
+    .list{
+    grid-row: list;
+    grid-column: list;
+}
+.news_head{
+     grid-row: name;
+    grid-column: name;
+}
+.news_tags{
+     grid-row: tag;
+    grid-column: tag;
+}
+.news_settings{
+            grid-row: settings;
+            grid-column: settings;
+            grid-template-rows: repeat(4, 1fr);
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 5px;
+}
+.button{
+            grid-row: button;
+            grid-column: button;
+}
+    
+}
+
+.tab_main2{
+    grid-column: span 2;
+}
+.calendar{
+    grid-template-rows: 2fr 2fr 12fr 3fr;
+    div{
+        @extend .grid;
+    }
+}
+.calTitleMonthLine{
+     grid-template-columns:10% 80% 10%;
+}
+.calTitleWeekLine, .calLine{
+    grid-template-columns: repeat(7, 1fr);
+        P{
+            align-self: center;
+            }
+}
+.calLegRow{
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.recordsList{
+    grid-template-rows: 1fr 8fr;
+    
+    div{
+        @extend .grid;    
+    }
+     .listHead{
+         grid-template-columns: 1fr 4fr;
+    }
+}
+.recHead{
+    grid-template-columns: 1fr 1fr;
+    .recButt{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+}
+.b1:hover:before {
+        background-color: white;
+        color: red;
+}
+
+

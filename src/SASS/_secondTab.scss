@@ -1,0 +1,139 @@
+$colM1:#FDC350;
+$colM2:#CE5700;
+$colM3:#fcdda2;
+$colM4:#fdb014;
+.tab_main2{
+    @extend .tab_main;
+    border-radius: 30px 0 10px 10px;
+    
+    padding: 40px 10%;
+    box-sizing: border-box;
+    
+}
+.calendar{
+    border: 2px solid black;
+    width: 100%;
+    height: 85%;
+    padding: 20px 10%;
+    box-sizing: border-box;
+    
+    p{
+        text-align: center;
+        font-family: Helvetica;
+        font-size: 20xp;
+    }
+    .calTitleMonthLine{
+       height: 50px;
+        margin: 0 2%;
+        background-color: $colM2;
+        border-radius: 5px;
+        
+        p{
+            font-size: 28px;
+            text-align: center;
+            font-family: serif;
+            color:white;
+            align-self: center;
+            
+        }
+    }
+
+    .calDay{
+        background-color: white;
+        width: 80%;
+        align-items: center;
+        align-self: stretch;
+        text-align: center;
+        margin: 5px auto;
+        padding: 5px 0 2px;
+        border-radius: 10px;
+        cursor: pointer;
+       }
+        .few{
+            background-color: $colM3;
+        }
+        .med{
+            background-color: $colM4;
+        }
+        .lot{
+            background-color: $colM2;
+        }
+    .calLegRow{
+        background-color: white;
+        border: 2px solid $colM4;
+        
+        margin-top: 5px;
+        border-radius: 5px;
+        div{
+            align-self: center;
+            margin: 0 auto;
+            padding: 5px;
+            width: 60%;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+    }
+}
+.recordsList{
+    
+    
+    .listHead{
+        
+        height: 60px;
+        margin-bottom: 10px;
+        div{
+            align-self: center;
+           
+            P{
+                font: 22px Helvetica;
+                margin: 0 auto;
+            }
+            
+        }
+        .listData{
+            margin: 0 0 0 auto;
+            p{
+                font-size: 30px;
+                font-weight: 500;
+            }
+        }
+        .bBack{
+            color: white;
+            background-color: $colM2;
+            padding: 8px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    }
+    .listMain{
+         border: 2px solid $colM4;
+        overflow-y: scroll;
+        height: 320px;
+        background-color: $colM3;
+        padding: 10px;
+        
+    }
+    .record{
+        border-bottom:2px solid $colM4;
+        padding: 10px;
+        margin: 0 10px;
+        box-sizing: border-box;
+    }
+    .recHead{
+        
+        font-size: 24px;
+        font-family:  Helvetica;
+        .recButt{
+           
+            width: 60px;
+            align-self: flex-end;
+            margin-left: auto;
+            margin-right: -5px;
+            
+            .recButtDel{
+                font-size: 34px;
+                margin-top: -3px;
+            }
+        }
+    }
+}

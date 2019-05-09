@@ -1,0 +1,129 @@
+$colM1:#FDC350;
+$colM2:#CE5700;
+$colM3:#fcdda2;
+$colM4:#fdb014;
+    
+@mixin borR($rad){
+    border-radius: $rad;
+}
+@mixin bgCol($col){
+    background-color: $col;
+}
+.mainPart{
+    
+    
+    
+    margin: 0 auto;
+    .tab_head{
+        
+        width:100%;
+        height: 40px;
+        text-align: center;
+        
+        cursor: pointer;
+        z-index: 100;
+
+        p{
+            align-self: center;
+            font: 20px Helvetica;
+            color: $colM2;
+            text-shadow: 1px 1px 1px black;
+        }
+    }
+    
+
+    .tab_main1{
+        @extend .tab_main;
+        padding: 20px 40px;
+        
+        border-radius: 0 30px 10px 10px;
+    
+     
+         .list{
+                @include bgCol($colM3);
+                /*@include borR(25px);*/
+                
+                border-radius: 10px 0 0 10px; 
+                border: 2px solid $colM4;
+                height: 100%;
+                width: 100%;
+                 
+                align-items: center; 
+                align-self: center;
+                margin: 0 auto;
+                
+                 margin-top: 0px;
+             overflow-y: scroll;
+             padding: 5px 0;
+             box-sizing: border-box;
+             p{
+                padding: 5px 15px;
+                 margin-bottom: 5px;
+                 border-bottom: 1px solid $colM2; 
+                 /*font-family: Arial;*/
+             }
+            }
+
+        input{
+            align-items: center;
+            align-self: stretch;
+           
+            @include bgCol($colM3);
+            @include borR(10px);
+            border: 2px solid $colM4;
+            padding: 0 10px;
+        }
+        .news_head input{
+            font-size:24px;
+            
+        }
+        .news_tags input{
+            border-radius: 5px;
+            width: 40%;
+        }
+        
+        .news_mainText textarea{
+            overflow-y: scroll;
+            align-self: stretch;
+            resize: none;
+            @include bgCol($colM3);
+            border-radius: 10px 0 0 10px;
+            border: 2px solid $colM4;
+            padding: 5px;
+            font-size: 18px;
+        }
+        .news_settings{
+            
+            @include bgCol($colM3);
+            @include borR(10px);
+            border: 2px solid $colM4;
+            
+            
+            padding: 10px 30px;
+            p{
+                align-self: center;
+            }
+            input{
+                text-align: center;
+                border-radius: 5px;
+                background-color: white;
+            }
+            select{
+                padding: 0 90px;
+                border-radius: 5px;
+                border: 2px solid $colM4;
+            }
+        }
+        .button{
+            
+            @include bgCol($colM2);
+            p{
+                align-self: center;
+                align-items: center;
+                text-align: center;
+                font: 20px Helvetica;
+                color: $colM3;
+            }
+        }
+    }
+}
