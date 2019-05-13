@@ -5,7 +5,7 @@ class  TabTwo extends Component{
     render(){
         return(
             <div  className="mainPart grid">
-                <div className="tab_head trans" ><Link to="/"><p>В очереди</p></Link></div>
+                <div className="tab_head trans" ><Link to="/news-option"><p>В очереди</p></Link></div>
                 <div className="tab_head act" ><p>Неназначеные</p></div>
                 <div className="tab_main2">
                     <div className="calendar grid">

@@ -12,6 +12,7 @@ class  TabOne extends Component{
         this.state = {
             news: [],
             select: {}
+
         }
     }
 
@@ -19,6 +20,7 @@ class  TabOne extends Component{
     updateData = (item) => {
         this.setState({ select: item })
     }
+
 
 
     render(){

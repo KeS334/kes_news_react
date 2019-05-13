@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import Header from './components/Header';
 import TabOne from './components/TabOne';
 import TabTwo from './components/TabTwo';
-import './App.css';
+//
+// import './App.css';
+import './SASS/style.scss';
 import {Router, Route, Switch, BrowserRouter, Redirect, hashHistory } from "react-router-dom";
 import axios from "react-axios";
 import allReducers from  "./reducers"
@@ -26,8 +28,9 @@ class App extends Component{
 
             <Header />
               <Switch>
-                <Route exact path="/" component={TabOne} />
+                <Route exact path="/news-option" component={TabOne} />
                 <Route exact path="/calendar" component={TabTwo} />
+                <Redirect from="/" to="/news-option"></Redirect>
               </Switch>
 
           </BrowserRouter> >
